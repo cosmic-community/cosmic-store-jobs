@@ -134,7 +134,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
           )}
 
           {/* Changed: Always show buy button regardless of stock status */}
-          <BuyButton productName={name} price={price} inStock={in_stock} />
+          {/* Changed: Added ?? false to handle possibly undefined in_stock value */}
+          <BuyButton productName={name} price={price} inStock={in_stock ?? false} />
         </div>
       </div>
 
