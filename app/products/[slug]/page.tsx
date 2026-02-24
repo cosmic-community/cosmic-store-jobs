@@ -5,7 +5,6 @@ import ReactMarkdown from 'react-markdown'
 import { getProductBySlug, getReviewsByProduct, getProducts } from '@/lib/cosmic'
 import StarRating from '@/components/StarRating'
 import ReviewCard from '@/components/ReviewCard'
-import BuyButton from '@/components/BuyButton' // Changed: Added BuyButton import
 import type { Metadata } from 'next'
 
 interface ProductPageProps {
@@ -126,9 +125,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {in_stock ? '✓ In Stock' : '✕ Out of Stock'}
             </span>
           </div>
-
-          {/* Changed: Added Buy Button */}
-          <BuyButton productName={name} price={price} inStock={in_stock} />
 
           {description && (
             <div className="mt-8 prose prose-sm prose-gray max-w-none text-gray-600 leading-relaxed">
